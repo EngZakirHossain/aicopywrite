@@ -83,7 +83,7 @@ class RegisteredUserController extends Controller
         }
 
         $user = new User();
-        $user->plan_id = 4;
+        $user->plan_id = Plan::whereSlug('free-plan')->first()->id;
         $user->name = $request->name;
         $user->email = $request->email;
         $user->will_expire = $will_expire;
